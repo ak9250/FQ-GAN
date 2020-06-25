@@ -7,4 +7,4 @@ spec:
 build_steps:
     - pip install tensorflow runway-python opencv-python
     - if_cpu: pip install tensorflow
-    - if_gpu: pip install tensorflow-gpu
+    - if_gpu: pip install tensorflow-gpu==1.15
