@@ -5,7 +5,7 @@ spec:
     cpu: False
     gpu: True    
 build_steps:
-    - pip install tensorflow runway-python opencv-python
+    - pip install tensorflow runway-python opencv-python gdown
     - mkdir 'models'
     - gdown https://drive.google.com/uc?id=11yAAp7UGclaZ5xIlgGJrXs6VX4xiVm4E -O ./models/UGATIT-q.model-700000.data-00000-of-00001
     - gdown https://drive.google.com/uc?id=19nZPAjBex_lqbkGQMjSQmHeTogjKSRMJ -O ./models/checkpoint
