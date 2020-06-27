@@ -5,11 +5,6 @@ spec:
     cpu: False
     gpu: True    
 build_steps:
-    - pip install tensorflow runway-python opencv-python gdown
-    - mkdir 'models'
-    - gdown https://drive.google.com/uc?id=11yAAp7UGclaZ5xIlgGJrXs6VX4xiVm4E -O ./models/UGATIT-q.model-700000.data-00000-of-00001
-    - gdown https://drive.google.com/uc?id=19nZPAjBex_lqbkGQMjSQmHeTogjKSRMJ -O ./models/checkpoint
-    - gdown https://drive.google.com/uc?id=1g6xZ5hv8WIBF7udLXEnSIjZoukJ1FElf -O ./models/UGATIT-q.model-700000.index
-    - gdown https://drive.google.com/uc?id=1Yqe7let5-Wn0VCUQ6VDC1rtcsej68lWa -O ./models/UGATIT-q.model-700000.meta
+    - pip install tensorflow runway-python opencv-python
     - if_cpu: pip install tensorflow
     - if_gpu: pip install tensorflow-gpu==1.15
