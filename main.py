@@ -66,11 +66,11 @@ def parse_args():
 def check_args(args):
     # --checkpoint_dir
 
-    if args.quant:
-        args.checkpoint_dir += '_quant'
-        args.result_dir += '_quant'
-        args.log_dir += '_quant'
-        args.sample_dir += '_quant'
+    # if args.quant:
+    #     args.checkpoint_dir += '_quant'
+    #     args.result_dir += '_quant'
+    #     args.log_dir += '_quant'
+    #     args.sample_dir += '_quant'
 
     check_folder(args.checkpoint_dir)
 

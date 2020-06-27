@@ -12,7 +12,6 @@ sess = tf.InteractiveSession(graph=g)
 def setup(opts):
     args = parse_args()
     args.dataset = 'portrait'
-    args.img_size = 256
     gan = UGATIT(sess, args)
     gan.build_model()
     gan.load_from_latest(opts['checkpoint'])
