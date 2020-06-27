@@ -11,7 +11,7 @@ sess = tf.InteractiveSession(graph=g)
 @runway.setup(options={'checkpoint': runway.file(is_directory=True)})
 def setup(opts):
     args = parse_args()
-    args.phase = 'test'
+    args.dataset = 'portrait'
     args.img_size = 256
     gan = UGATIT(sess, args)
     gan.build_model()
