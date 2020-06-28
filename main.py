@@ -58,7 +58,7 @@ def parse_args():
     parser.add_argument('--commitment_cost', type=float, default=2.0, help='commitment cost')
     parser.add_argument('--quantization_layer', type=str, default='123', help='which layer?')
     parser.add_argument('--decay', type=float, default=0.85, help='dictionary learning decay')
-    parser.add_argument('--test_train', type=str2bool, default=True, help='if test while training')
+    parser.add_argument('--test_train', type=str2bool, default=False, help='if test while training')
 
     return check_args(parser.parse_args())
 
