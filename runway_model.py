@@ -14,7 +14,7 @@ def setup(opts):
     args.dataset = 'portrait'
     gan = UGATIT(sess, args)
     gan.build_model()
-    gan.load(opts['checkpoint'])
+    gan.load_from_latest(opts['checkpoint'])
     return gan
     
 @runway.command('translate', inputs={'image': runway.image}, outputs={'image': runway.image})

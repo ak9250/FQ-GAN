@@ -720,3 +720,20 @@ class UGATIT(object) :
 
             save_images(fake_img, [1, 1], image_path)
 
+def generate(self, image):
+    model_input = np.array(image)
+    model_input = np.expand_dims(model_input, axis=0)
+    fake_images = self.sess.run(self.test_fake_B, feed_dict = {self.test_domain_A : model_input})
+    return fake_images[0]
+
+def load_from_latest(self, path):
+    tf.global_variables_initializer().run()
+
+    self.saver = tf.train.Saver()
+    could_load, checkpoint_counter = self.load(path)
+
+    if could_load :
+        print(" [*] Load SUCCESS")
+    else :
+        print(" [!] Load failed...")
+
