@@ -10,6 +10,7 @@ from vq_layer import VectorQuantizerEMA
 import shutil
 import os
 
+
 class UGATIT(object) :
     def __init__(self, sess, args):
         self.light = args.light
