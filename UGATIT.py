@@ -8,6 +8,7 @@ import tensorflow as tf
 from tensorflow.python.training import moving_averages
 from vq_layer import VectorQuantizerEMA
 import shutil
+import os
 
 class UGATIT(object) :
     def __init__(self, sess, args):
@@ -417,6 +418,10 @@ class UGATIT(object) :
         tf.global_variables_initializer().run()
 
         self.saver = tf.train.Saver()
+        print("loading from latest:", path)
+        for item in os.walk(os.getcwd()):
+            print(item)
+        print("done listing in load_from_latest")
         could_load, checkpoint_counter = self.load(path)
 
         if could_load :
