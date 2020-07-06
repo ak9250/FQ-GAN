@@ -673,7 +673,7 @@ class UGATIT(object) :
 
 
     def save(self, checkpoint_dir, step):
-        checkpoint_dir = os.path.join(checkpoint_dir, self.model_dir)
+        # checkpoint_dir = os.path.join(checkpoint_dir, self.model_dir)
 
         if not os.path.exists(checkpoint_dir):
             os.makedirs(checkpoint_dir)
@@ -688,8 +688,8 @@ class UGATIT(object) :
 
     def load(self, checkpoint_dir):
         print(" [*] Reading checkpoints...")
-        checkpoint_dir = os.path.join(checkpoint_dir, self.model_dir)
-
+        # checkpoint_dir = os.path.join(checkpoint_dir, self.model_dir)
+        print("  from:", checkpoint_dir)
         ckpt = tf.train.get_checkpoint_state(checkpoint_dir)
         if ckpt and ckpt.model_checkpoint_path:
             ckpt_name = os.path.basename(ckpt.model_checkpoint_path)
@@ -698,6 +698,7 @@ class UGATIT(object) :
             print(" [*] Success to read {}".format(ckpt_name))
             return True, counter
         else:
+
             print(" [*] Failed to find a checkpoint")
             return False, 0
 
