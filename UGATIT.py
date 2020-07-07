@@ -690,7 +690,12 @@ class UGATIT(object) :
         print(" [*] Reading checkpoints...")
         # checkpoint_dir = os.path.join(checkpoint_dir, self.model_dir)
         print("  from:", checkpoint_dir)
-        print(os.listdir(checkpoint_dir))
+        for item in os.listdir(checkpoint_dir):
+            print("   ", item, 'is folder?', os.path.isdir(item))
+        checkpoint_dir = os.path.join(checkpoint_dir, item)
+        print("  now from:", checkpoint_dir)
+        for item in os.listdir(checkpoint_dir):
+            print("   ", item, 'is folder?', os.path.isdir(item))
         ckpt = tf.train.get_checkpoint_state(checkpoint_dir)
         if ckpt and ckpt.model_checkpoint_path:
             ckpt_name = os.path.basename(ckpt.model_checkpoint_path)
