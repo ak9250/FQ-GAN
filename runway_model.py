@@ -8,10 +8,11 @@ from PIL import Image
 g = tf.get_default_graph()
 sess = tf.InteractiveSession(graph=g)
 
+# setup up file loads the model and it calls ugatit load from latest 
 @runway.setup(options={'checkpoint': runway.file(is_directory=True)})
 def setup(opts):
     args = parse_args()
-    args.dataset = 'Portrait'
+    args.dataset = 'portrait'
     gan = UGATIT(sess, args)
     gan.build_model()
     gan.load_from_latest(opts['checkpoint'])
